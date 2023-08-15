@@ -1,0 +1,217 @@
+buat aplikasi pemesanan studio musik dengan syarat
+
+1. Pemesanan dilakukan dalam rentang waktu 30 hari atau di bulan ini.
+2. Pemesanan hanya dapat dilakukan untuk slot waktu yang tersedia.
+3. Pemesanan tidak dapat dilakukan untuk slot waktu yang telah terisi oleh pelanggan lain.
+4. Pemesanan selama satu hari penuh (misalnya dari jam 09:00 pagi hingga 18:00 sore) tidak diizinkan.
+5. Pemesanan untuk lebih dari satu hari (misalnya selama dua hari berturut-turut) perlu diperhatikan agar tidak bertabrakan dengan pemesanan lain.
+6. Pelanggan dapat membatalkan atau mengubah pemesanan sebelum tanggal pemesanan.
+7. Pemesanan perlu memiliki data lengkap pelanggan seperti nama, nomor telepon, dan alamat email.
+8. Pemesanan perlu memiliki informasi tambahan, seperti tujuan pemesanan, jumlah orang, dll.
+9. Pemesanan mungkin memiliki batas waktu untuk mengambil keputusan pembayaran.
+10. Pelanggan mungkin perlu melakukan pembayaran sebelum tanggal pemesanan untuk mengonfirmasi pemesanan.
+11. Jika pembayaran tidak dilakukan tepat waktu, pemesanan dapat dibatalkan dan slot waktu tersebut menjadi tersedia kembali.
+12. Jika pemesanan dibatalkan oleh pelanggan, slot waktu tersebut dapat diisi oleh pelanggan lain.
+13. Pemesanan mungkin memiliki durasi minimum atau maksimum tertentu (misalnya minimal 1 jam dan maksimal 5 jam).
+14. Pemesanan dapat dilakukan untuk berbagai jenis studio musik yang berbeda (misalnya studio rekaman, studio latihan, dll) dengan biaya yang berbeda-beda.
+15. Pelanggan dapat memilih fasilitas tambahan seperti penyewaan alat musik tambahan, penyewaan kamera, atau jasa rekaman.
+16. Pemesanan dapat dilakukan secara online melalui situs web atau aplikasi seluler.
+17. Pemesanan dapat diakses dan dikelola oleh staf studio musik melalui sistem manajemen pemesanan.
+18. Pelanggan mungkin memerlukan konfirmasi atau tiket pemesanan sebagai bukti pembayaran dan pengakuan pemesanan.
+19. Pemesanan perlu memiliki sistem notifikasi untuk mengingatkan pelanggan tentang tanggal pemesanan mereka.
+20. Pemesanan dapat dilakukan untuk periode waktu jauh ke depan (misalnya beberapa bulan atau tahun) untuk keperluan jangka panjang.
+
+buat dalam program php sumber data buat dalam berbentuk array
+
+
+<?php 
+
+
+[0] => Array
+[
+	[payment_amount] => 8000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 100000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 14000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 439499
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+[
+	[payment_amount] => 140000
+	[date_created] => 2023-08-05 13:45:07
+],
+
+
+
+ ?>
+
+
+
+
+
+
+
+
+============================================================================================
+============================================================================================
+============================================================================================
+============================================================================================
+
+saya punya 3 layanan yaitu sewa studio 50.000 jadi member 60.000 rekaman musik 70.000
+
+di bulan juni saya berhasil menjual 3 sewa studio 4 rekaman musik 1 member
+di bulan juli saya berhasil menjual 8 sewa studio 3 rekaman musik 10 member
+
+berapa seluruh keuntungan yang saya dapat dan berapa kenaikan keuntungan saya di bulan juli
+
+
+
+
+<div class="form-floating mb-3" id="clock-in-feedback">
+	<input class="form-control" id="clock-in" type="time" min="07:00" max="20:00" placeholder="Jam Masuk" data-sb-validations="required" />
+	<label for="clock-in">Jam Masuk</label>
+	<div class="invalid-feedback text-danger opacity-75"></div>
+</div>
+
+<div class="form-floating mb-3" id="clock-out-feedback">
+	<input class="form-control" id="clock-out" type="time" min="07:00" max="20:00" placeholder="Jam keluar" data-sb-validations="required" />
+	<label for="clock-out">Jam keluar</label>
+	<div class="invalid-feedback text-danger opacity-75"></div>
+</div>
+
+
+
+60000 * ceil((date('H:i', strtotime('+2 hour')) - date('H:i', strtotime('+1 hour'))) / 3600)
+
+
+
+
+buat SQL dengan ketentuan sebagai berikut
+nama tabel spanding
+id autoincrement primarikey
+uuid_user
+information
+date
+amount
+date_created
+date_updated
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// akun customer
+[
+	{
+		"email": "cukkilirdi@gufum.com",
+		"password": "husni123"
+	},
+	{
+		"email": "h7e0tjfrfx@zipcatfish.com",
+		"password": "husni123"
+	},
+	{
+		"email": "yknzkofgh4@pirolsnet.com",
+		"password": "husni123"
+	},
+	{
+		"email": "rd86jcuyrl@sfolkar.com",
+		"password": "husni123"
+	},
+	{
+		"email": "8patdds0i0@bloheyz.com",
+		"password": "jI6DZUq1"
+	},
+	{
+		"email": "a3iz6gdbrf@drowblock.com",
+		"password": "jI6DZUq1"
+	},
+	{
+		"email": "u3ll6xwq8h@superblohey.com",
+		"password": "jI6DZUq1"
+	}
+	
+]
+
+
+// akun karyawan
+[
+	{
+		"email": "qkuy5eqsvd@myinfoinc.com",
+		"password": "husni123"
+	},
+	{
+		"email": "zf3rfvdf5x@zipcatfish.com",
+		"password": "husni123"
+	},
+	{
+		"email": "mpf9ywakbj@zipcatfish.com",
+		"password": "husni123"
+	},
+	{
+		"email": "hkzh6zg53w@greencafe24.com",
+		"password": "husni123"
+	},
+	{
+		"email": "xmu6bffcxa@happy2023year.com",
+		"password": "jI6DZUq1"
+	}
+]

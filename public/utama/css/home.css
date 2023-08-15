@@ -1,0 +1,59 @@
+.heading-content{
+	background: url('http://localhost/padros/public/utama/assets/static/bg-home.jpeg');
+	background-position-y: top;
+	background-size: 100%;
+	position: relative;
+}
+.heading-content::before{
+	content: '';
+	position: absolute;
+	background-color: rgba(33, 37, 41, 0.80);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.heading-content *{
+	z-index: 1;
+}
+
+.recommend{
+	position: absolute;
+	top: 16px;
+}
+.recommend span{
+	position: absolute;
+	width: 100%;
+	top: 50%;	
+	left: 50%;
+	transform: translate(-40%, -50%);
+	font-size: 15px;
+	font-weight: 500; 
+}
+
+
+#contact.contact{
+	background-color: #F8F9FA;
+}
+#contact.contact .row{
+	padding: 92px 0;
+}
+
+#contact.contact .row .items-contect{
+	margin-bottom: 60px;
+}
+#contact.contact .row .items-contect h3{
+	margin-bottom: 20px;
+}
+#contact.contact .row .items-contect .contact-link{
+	width: 36px;
+	gap: 10px;
+	margin-bottom: 10px;
+	color: inherit;
+	text-decoration: none;
+}
+#contact.contact .row iframe{
+	width: 100%;
+	height: 100%;
+	min-height: 400px;
+}
