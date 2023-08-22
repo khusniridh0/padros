@@ -18,6 +18,13 @@
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
+          <a class="nav-link <?php echo $title == 'Deposit'? '' : 'collapsed' ?>" href="<?php echo base_url('deposit') ?>">
+            <i class="bi bi-wallet2"></i>
+            <span>Deposit</span>
+          </a>
+        </li><!-- End Profile Page Nav -->
+
+        <li class="nav-item">
           <a class="nav-link <?php echo $title == 'Pesanan'? '' : 'collapsed' ?>" href="<?php echo base_url('order') ?>">
             <i class="bi bi-cart-dash"></i>
             <span>Pesanan</span>
@@ -30,6 +37,15 @@
             <span>Keuangan</span>
           </a>
         </li><!-- End Contact Page Nav -->
+        <?php if (is_owner()): ?>
+        <li class="nav-item">
+          <a class="nav-link <?php echo $title == 'Laporan'? '' : 'collapsed' ?>" href="<?php echo base_url('report') ?>">
+            <i class="bi bi-file-earmark-pdf"></i>
+            <span>Laporan</span>
+          </a>
+        </li><!-- End Register Page Nav -->
+        <?php endif ?>
+
         <?php if (is_owner()): ?>
         <li class="nav-item">
           <a class="nav-link <?php echo $title == 'Karyawan'? '' : 'collapsed' ?>" href="<?php echo base_url('employee') ?>">

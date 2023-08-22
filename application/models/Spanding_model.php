@@ -27,6 +27,12 @@ class Spanding_model extends CI_Model {
         return $this->db->get_where($this->table, ['DATE(date_created)' => $date])->result_array();
     }
 
+    public function get_spanding_report($date){
+        $this->db->where_in('DATE(date_created)', $date);
+        $this->db->where('status', 1);
+        return $this->db->get($this->table)->result_array();
+    }
+
 }
 
 

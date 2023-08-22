@@ -6,6 +6,7 @@ class Profile extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('user_model');
+		$this->load->model('deposits_model');
 
 		if (!is_login() || !is_customer()) {
 			redirect('/','refresh');
@@ -94,13 +95,38 @@ class Profile extends CI_Controller {
 
 		if (!$this->form_validation->run()) {
 			flashmessage('warning', 'Deposit gagal di lakukan');
-			redirect('profile');
+			redirect('profile', 'refresh');
 		} else {
-			$deposit = preg_replace('/[^0-9]/', '', $this->input->post('deposit'));
-			$deposit += $user['balance'];
-			$this->user_model->update_profile_user(['balance' => $deposit], $this->session->userdata('user'));
-			flashmessage('success', 'Deposit berhasil');
-			redirect('profile');
+			if (!$_FILES['proof-of-payment']['error'] == 0) {
+				flashmessage('danger', 'Unggah bukti pembayaran');
+				redirect('profile', 'refresh');
+			} else {
+				$uuid = random_uuid();
+				$deposit = preg_replace('/[^0-9]/', '', $this->input->post('deposit'));
+				$data = [
+					'uuid_deposit' => $uuid,
+					'uuid_user' => $this->session->userdata('user'),
+					'amount' => $deposit,
+					'status' => 0,
+					'date_created' => date('Y-m-d H:i:s'),
+					'date_updated' => date('Y-m-d H:i:s')
+				];
+
+				$config['upload_path'] = './public/owner/assets/img/orders/';
+				$config['allowed_types'] = 'jpeg|jpg|png';
+				
+				$this->load->library('upload', $config);
+				
+				if (!$this->upload->do_upload('proof-of-payment')){
+					flashmessage('danger', 'Terjadi kesalahan sistem');
+				} else{
+					$data['proof'] = $this->upload->data('file_name');
+				}
+			}
+
+			$this->deposits_model->save_deposit($data);
+			flashmessage('success', 'Deposit berhasil. Sedang dalam prosess');
+			redirect('profile','refresh');
 		}
 	}
 

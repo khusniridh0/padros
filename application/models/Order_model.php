@@ -67,6 +67,14 @@ class Order_model extends CI_Model {
         return $this->db->get($this->table)->result_array();
     }
 
+    public function get_order_report($date) {
+        $this->db->join('order_details', 'order_details.order_uuid = order.order_uuid');
+        $this->db->join('payment', 'payment.payment_uuid = order.payment_uuid');
+        $this->db->where_in('DATE(payment.date_created)', $date);
+        $this->db->where('order_details.status', 1);
+        return $this->db->get($this->table)->result_array();
+    }
+
 }
 
 

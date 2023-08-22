@@ -215,3 +215,17 @@ date_updated
 		"password": "jI6DZUq1"
 	}
 ]
+
+
+cari selisih tanggal
+data [start] => 2023-08-14, hingga [end] => 2023-08-20
+looping sebanyak selisih tanggal
+jalankan query [$query = "SELECT * FROM data WHERE `date` = $date"]
+
+id_deposit
+id_user
+amount
+proof
+status
+date_created
+date_updated

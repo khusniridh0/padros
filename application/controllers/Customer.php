@@ -83,8 +83,6 @@
  	}
 
  	public function detile() {
- 		// ini_set('display_errors', 0);
-
  		$data['title'] = 'Detile Pelanggan';
  		$data['css'] = [
  			base_url('public/owner/assets/css/customer.css')

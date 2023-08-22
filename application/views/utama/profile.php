@@ -144,7 +144,7 @@
 		<!-- Modal -->
 		<div class="modal fade" id="TopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
-				<form action="<?php echo base_url('profile/deposit'); ?>" method="post" id="depositUp">
+				<form action="<?php echo base_url('profile/deposit'); ?>" method="post" enctype="multipart/form-data" id="depositUp">
 					<div class="modal-content">
 						<div class="modal-header border-0">
 							<h1 class="modal-title fs-5" id="exampleModalLabel">Deposit</h1>
@@ -155,10 +155,15 @@
 								<label for="deposit">Jumalah Deposit</label>
 								<div class="invalid-feedback text-danger opacity-75"></div>
 							</div>
+
+							<div class="mb-3" id="payment">
+								<label for="proof-of-payment" class="form-control py-lg-3" role="button" id="file-label">Unggah bukti bayar</label>
+								<input class="d-none" type="file" id="proof-of-payment" name="proof-of-payment" accept="image/jpg, image/jpeg, image/png">
+							</div>
 						</div>
 						<div class="modal-footer border-0">
 							<button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-							<button type="submit" class="btn btn-success">Deposit</button>
+							<button type="submit" class="btn btn-success disabled" id="submit-deposit">Deposit</button>
 						</div>
 					</div>
 				</form>

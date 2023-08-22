@@ -43,6 +43,11 @@
                 </div>
 
                 <div class="row">
+                  <div class="col-lg-3 col-md-4 label">Saldo Deposit</div>
+                  <div class="col-lg-9 col-md-8">Rp <?php echo number_format($user['balance']) ?></div>
+                </div>
+
+                <div class="row">
                   <div class="col-lg-3 col-md-4 label">Surel</div>
                   <div class="col-lg-9 col-md-8"><?php echo $user['email'] ?></div>
                 </div>

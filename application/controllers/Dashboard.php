@@ -17,6 +17,11 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function index() {
+		$data['pengeluaran'] = 0;
+		foreach ($this->query['spending'] as $item) {
+			$data['pengeluaran'] += $item['amount'];
+		}
+		$data['present_pengeluaran'] = present($this->query['spending'], date('Y-m-d'));
 		$data['pendapatan'] = 0;
 		foreach ($this->query['income'] as $item) {
 			$data['pendapatan'] += $item['payment_amount'];

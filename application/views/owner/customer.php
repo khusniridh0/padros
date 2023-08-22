@@ -55,6 +55,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Customer</th>
                         <th scope="col">Alamat Email</th>
+                        <th scope="col">Saldo Deposit</th>
                         <th scope="col">Nomor HP</th>
                         <th scope="col">Mendaftar</th>
                         <th scope="col">Berubah</th>
@@ -68,6 +69,7 @@
                           <th scope="row"><a href="#"><?php echo $i + 1 ?></a></th>
                           <td><?php echo $data['name'] ?></td>
                           <td class="text-primary"><?php echo $data['email'] ?></td>
+                          <td>Rp <?php echo $data['balance'] ?></td>
                           <td><?php echo $data['phone'] ?></td>
                           <td><?php echo $data['date_created'] ?></td>
                           <td><?php echo $data['date_updated'] ?></td>

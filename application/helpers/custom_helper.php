@@ -143,7 +143,7 @@ function set_date($date) {
     $month = $time[1];
     $year = $time[2];
     $monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-    $date = $year . '0' . array_search($month, $monthNames) + 1 . '-' . $date;
+    $date = $year . '-0' . array_search($month, $monthNames) + 1 . '-' . $date;
     return date('Y-m-d', strtotime($date));
 }
 

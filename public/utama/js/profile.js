@@ -26,11 +26,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
+  document.getElementById('proof-of-payment').addEventListener('change', function () {
+    this.labels[0].innerHTML = this.value.split('\\').pop()
+  })
+
   document.getElementById('depositUp').addEventListener('input', idrFormat)
-  document.getElementById('depositUp').addEventListener('submit', notNull)
+  document.getElementById('depositUp').addEventListener('keyup', function () {
+    if (validDeposit() == undefined) {
+      console.log(document.getElementById('submit-deposit').classList.remove('disabled'))
+    } else {
+      console.log(document.getElementById('submit-deposit').classList.add('disabled'))
+    }
+  })
+
+  document.getElementById('depositUp').addEventListener('change', function () {
+    event.preventDefault()
+    if (validDeposit() == undefined) {
+      console.log(document.getElementById('submit-deposit').classList.remove('disabled'))
+    } else {
+      console.log(document.getElementById('submit-deposit').classList.add('disabled'))
+    }
+  })
 
   const modalTopUp = document.getElementById('TopUp')
   const inputTopUp = document.getElementById('deposit')
+  const proofTopUp = document.getElementById('proof-of-payment')
 
   modalTopUp.addEventListener('shown.bs.modal', function () {
     inputTopUp.focus()
@@ -39,9 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
     inputTopUp.value = ''
   })
 
-  function notNull(events) {
-    if (inputTopUp.value == '') {
-      event.preventDefault()
+  function validDeposit() {
+    console.log(inputTopUp.value.trim() == '')
+    if (inputTopUp.value.trim() == '') {
+      return false
+    }
+    console.log(proofTopUp.value.trim() == '')
+    if (proofTopUp.value.trim() == '') {
+      return false
     }
   }
 

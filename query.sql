@@ -69,4 +69,15 @@ CREATE TABLE spanding (
     date_updated TIMESTAMP
 );
 
+CREATE TABLE deposits (
+    id_deposit INT(11) AUTO_INCREMENT PRIMARY KEY,
+    uuid_deposit VARCHAR(255),
+    uuid_user VARCHAR(255),
+    amount VARCHAR(255),
+    proof VARCHAR(255),
+    status INT(11),
+    date_created TIMESTAMP,
+    date_updated TIMESTAMP
+);
+
 INSERT INTO `users` (`id`, `uuid`, `name`, `image`, `email`, `phone`, `address`, `password`, `verify`, `balance`, `role`, `status`, `date_updated`, `date_created`) VALUES (NULL, 'CGx1np78gbucVYd6jDXH', 'Surya', 'avatar1.jpg', 'suryakesuma63@gmail.com', '08975971177', 'Jawa Tengah', '$2y$10$O67bzlAypFRGD.Lx7cJ3V.eOCDtSjrzrl.o3EpobazsIztu4.yWoC', '549543', '0', '1', '1', current_timestamp(), current_timestamp());
